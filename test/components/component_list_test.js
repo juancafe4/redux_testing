@@ -3,18 +3,18 @@ import CommentList from '../../src/components/comment_list';
 
 describe('CommentList Component', () => {
   let component = null;
-
+  let props = null;
   beforeEach(() => {
-    const props =  { comments: ["New comment", "Aloha", "Hello"] };
+    props =  { comments: ["New comment", "Aloha", "Hello"] };
     component = renderComponent(CommentList, null, props);
   });
 
   it('shows an li for each comment', () => {
-    expect(component.find('li').length).equal(2);
+    expect(component.find('li').length).equal(3);
   });
 
   it('shows each comment that is provided', () => {
-    props.map((val, index) => {
+    props.comments.map((val, index) => {
       expect(component).to.contain(val)
     });
   });

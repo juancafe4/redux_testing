@@ -11,7 +11,7 @@ export default class CommentBox extends React.Component {
   }
   onHandleSubmit(e) {
     e.preventDefault();
-    
+
     this.setState({ comment: '' })
   }
   render() {
@@ -21,7 +21,7 @@ export default class CommentBox extends React.Component {
           value= { this.state.comment }
           onChange={ this.onHandleChange.bind(this)}
         />
-        <button>Submit comment</button>
+        <button action="submit" >Submit comment</button>
       </form>
     );
   }

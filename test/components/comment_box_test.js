@@ -27,7 +27,8 @@ describe("CommentBox", () => {
     });
 
     it('wehn submitted, clears the input', () => {
-      expect(component.find('button')).to.exist;
+      component.simulate('submit');
+      expect(component.find('textarea')).to.have.value('');
     });
   });
 })

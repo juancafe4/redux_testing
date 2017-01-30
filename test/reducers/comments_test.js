@@ -4,7 +4,7 @@ import commmentReducer from '../../src/reducers/comments';
 
 describe('Comments Reducer', () => {
   it('handles action with unknown type', () => {
-    const state = commmentReducer();
+    const state = commmentReducer(undefined, {});
     expect(state).to.eql([]);
   });
 

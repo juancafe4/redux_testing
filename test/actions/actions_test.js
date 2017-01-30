@@ -7,7 +7,7 @@ describe('actions', () => {
   describe('saveComment', () => {
     let action = null;
     beforeEach(() => {
-      action = saveComment();
+      action = saveComment('new comment');
     })
     it('has the correct tyoe', () => {
       expect(action.type).to.equal(SAVE_COMMENT)

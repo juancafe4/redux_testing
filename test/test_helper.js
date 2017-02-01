@@ -14,10 +14,10 @@ global.window = global.document.defaultView;
 const $ = _$(global.window); // we want to make responsable of this fake DOM
 
 // Build 'renderComponent' helper that should render a given React class
-function renderComponent(ComponentClass) {
+function renderComponent(ComponentClass, props, state) {
   const componentInstance = TestUtils.renderDocument(
-    <Provider store={createStore(reducers)}>
-      <ComponentClass/>
+    <Provider store={createStore(reducers, state)}>
+      <ComponentClass {...props}/>
     </Provider>
   );
   return $(ReactDOM.findDOMNode(componentInstance)) // produces HTML
